@@ -10,4 +10,9 @@
     <Folder Include="CustomerAggregate\Exceptions\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Diverse" Version="0.10.0" />
+    <PackageReference Include="FluentValidation" Version="11.0.1" />
+  </ItemGroup>
+
 </Project>

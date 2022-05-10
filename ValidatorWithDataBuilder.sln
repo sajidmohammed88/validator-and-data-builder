@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Api", "ValidatorWithDataBuilder.Api\ValidatorWithDataBuilder.Api.csproj", "{479329C2-0466-4001-89A0-5B6055A0169B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Api", "src\ValidatorWithDataBuilder.Api\ValidatorWithDataBuilder.Api.csproj", "{479329C2-0466-4001-89A0-5B6055A0169B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Domain", "ValidatorWithDataBuilder.Domain\ValidatorWithDataBuilder.Domain.csproj", "{B47419DF-DA31-41A2-A53C-1B5AA1C524FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Domain", "src\ValidatorWithDataBuilder.Domain\ValidatorWithDataBuilder.Domain.csproj", "{B47419DF-DA31-41A2-A53C-1B5AA1C524FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D3DE5E1D-4AAF-41F6-B130-28D40C1339C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A1E0FC6E-C6FA-4711-ACC5-E114C4DB5EA4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Api.Tests", "ValidatorWithDataBuilder.Api.Tests\ValidatorWithDataBuilder.Api.Tests.csproj", "{CF34F71F-E4D0-4F47-BB44-888F38782EC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Api.Tests", "tests\ValidatorWithDataBuilder.Api.Tests\ValidatorWithDataBuilder.Api.Tests.csproj", "{CF34F71F-E4D0-4F47-BB44-888F38782EC7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Domain.Tests", "ValidatorWithDataBuilder.Domain.Tests\ValidatorWithDataBuilder.Domain.Tests.csproj", "{046E3F77-31A8-41EA-B3EA-97E1C58C0474}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidatorWithDataBuilder.Domain.Tests", "tests\ValidatorWithDataBuilder.Domain.Tests\ValidatorWithDataBuilder.Domain.Tests.csproj", "{046E3F77-31A8-41EA-B3EA-97E1C58C0474}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatorWithDataBuilder.Infrastructure", "ValidatorWithDataBuilder.Infrastructure\ValidatorWithDataBuilder.Infrastructure.csproj", "{DBA6BE9C-4984-49D0-9AAC-E42D0CCB6274}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatorWithDataBuilder.Infrastructure", "src\ValidatorWithDataBuilder.Infrastructure\ValidatorWithDataBuilder.Infrastructure.csproj", "{DBA6BE9C-4984-49D0-9AAC-E42D0CCB6274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

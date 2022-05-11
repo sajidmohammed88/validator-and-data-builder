@@ -31,6 +31,7 @@ namespace ValidatorWithDataBuilder.Domain.Tests
         [InlineData("", "Last Name must not be empty")]
         public void Should_return_error_when_lastName_is_null_or_empty(string lastName, string errorMessage)
         {
+            //Arrange
             CustomerValidator validator = new CustomerValidator();
             Customer customer = new Customer
             {

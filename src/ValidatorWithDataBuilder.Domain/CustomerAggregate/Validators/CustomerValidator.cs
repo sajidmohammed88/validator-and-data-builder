@@ -7,16 +7,21 @@ namespace ValidatorWithDataBuilder.Domain.CustomerAggregate.Validators
         public CustomerValidator()
         {
             RuleFor(_ => _.FirstName)
+                .Cascade(CascadeMode.Stop)
+                .NotNull()
+                .WithMessage("FirstName should not be null")
                 .NotEmpty()
                 .WithMessage("FirstName should not be empty");
-            RuleFor(_ => _.FirstName)
+
+            RuleFor(_ => _.LastName)
                 .NotNull()
-                .WithMessage("FirstName should not be null");
-            RuleFor(_ => _.LastName)
-                .NotNull();
-            RuleFor(_ => _.LastName)
                 .NotEmpty()
                 .WithMessage("{PropertyName} must not be empty");
+
+            RuleFor(_ => _.Discount)
+               .NotEqual(0)
+               .When(x => x.Discount is not null)
+               .WithMessage("{PropertyName} should not be zero");
         }
 
 

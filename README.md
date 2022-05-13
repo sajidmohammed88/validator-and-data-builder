@@ -2,7 +2,7 @@
 Use FluentValidation to validate data and data builder to generate randomly datas for tests.
 
 ## Requirements
-- [ ] Using [FluentValidation](https://docs.fluentvalidation.net/en/latest/) to validate the customer request.
+- [X] Using [FluentValidation](https://docs.fluentvalidation.net/en/latest/) to validate the customer request.
 * FirstName and LastName Should not be ***null*** or ***empty***.
 * Discount should not equal to ***0*** if ***assigned***
 * Address should not be ***null*** or ***empty*** and between ***20***, ***250*** caracters

@@ -7,6 +7,11 @@ namespace ValidatorWithDataBuilder.Domain.Tests
 {
     public class CustomerValidatorTests
     {
+        private CustomerValidator _customervalidator;
+        public CustomerValidatorTests()
+        {
+            _customervalidator = new CustomerValidator();
+        }
 
         [Theory]
         [InlineData(null, "FirstName should not be null")]
@@ -14,7 +19,7 @@ namespace ValidatorWithDataBuilder.Domain.Tests
         public void Should_return_error_when_firstname_is_null_or_empty(string firstName, string errorMessage)
         {
             //Arrange
-            CustomerValidator validator = new CustomerValidator();
+            
             Customer customer = new Customer
             {
                 FirstName = firstName,
@@ -24,7 +29,7 @@ namespace ValidatorWithDataBuilder.Domain.Tests
             };
 
             //Act
-            var result = validator.TestValidate(customer);
+            var result = _customervalidator.TestValidate(customer);
 
             //Assert
             Assert.False(result.IsValid);
@@ -39,7 +44,6 @@ namespace ValidatorWithDataBuilder.Domain.Tests
         public void Should_return_error_when_lastName_is_null_or_empty(string lastName, string errorMessage)
         {
             //Arrange
-            CustomerValidator validator = new CustomerValidator();
             Customer customer = new Customer
             {
                 FirstName = "Toto",
@@ -49,7 +53,7 @@ namespace ValidatorWithDataBuilder.Domain.Tests
             };
 
             //Act
-            var result = validator.TestValidate(customer);
+            var result = _customervalidator.TestValidate(customer);
 
             //Assert
             Assert.False(result.IsValid);
@@ -62,7 +66,6 @@ namespace ValidatorWithDataBuilder.Domain.Tests
         public void Should_return_error_when_discount_equal_zero()
         {
             //Arrange
-            CustomerValidator validator = new CustomerValidator();
             Customer customer = new Customer
             {
                 FirstName = "Toto",
@@ -72,7 +75,7 @@ namespace ValidatorWithDataBuilder.Domain.Tests
             };
 
             //Act
-            var result = validator.TestValidate(customer);
+            var result = _customervalidator.TestValidate(customer);
 
             //Assert
             Assert.False(result.IsValid);
@@ -81,5 +84,29 @@ namespace ValidatorWithDataBuilder.Domain.Tests
                   .WithErrorMessage("Discount should not be zero");
         }
 
+        [Theory]
+        [InlineData(null, "Address should not be null")]
+        [InlineData("", "Address should not be empty")]
+        [InlineData("akka", "Address should be between 10 and 250")]
+        public void Should_return_error_when_Address_is_not_valid(string address, string errorMessage)
+        {
+            //Arrange
+            Customer customer = new Customer
+            {
+                FirstName = "Toto",
+                LastName = "nait",
+                Discount = 1,
+                Address = address
+            };
+
+            //Act
+            var result = _customervalidator.TestValidate(customer);
+
+            //Assert
+            Assert.False(result.IsValid);
+            Assert.Single(result.Errors);
+            result.ShouldHaveValidationErrorFor(_ => _.Address)
+                  .WithErrorMessage(errorMessage);
+        }
     }
 }
